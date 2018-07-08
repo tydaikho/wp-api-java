@@ -1,4 +1,4 @@
-# A WordPress REST API client for Java y Android
+# A WordPress REST API client for Java and Android
 
 > This library is an isomorphic client for the [WordPress REST API](http://developer.wordpress.org/rest-api), designed to work with WordPress 4.7 or later. If you are using the older [WP REST API plugin](https://github.com/WP-API/WP-API), some commands will not work.
 
