@@ -1,25 +1,23 @@
 package wp_api;
 
-import wp_api.models.Post;
+import wp_api.collections.Posts;
 
-import retrofit2.Call;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
 public class WP_API {
 
-    private Services services;
+    private Retrofit retrofit;
 
     public WP_API(String endpoint) {
-        Retrofit retrofit = new Retrofit.Builder()
+        retrofit = new Retrofit.Builder()
                 .baseUrl(endpoint)
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
-
-        services = retrofit.create(Services.class);
     }
 
-    public Call<Post> getPost(Integer id) {
-        return services.getPost(id);
+    public Posts getPosts() {
+        return new Posts(retrofit);
     }
+
 }

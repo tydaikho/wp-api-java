@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         WP_API wp_api = new WP_API("http://demo.wp-api.org/wp-json/");
 
         // Get the post with ID 15
-        Call<Post> postCall = wp_api.getPost(15);
+        Call<Post> postCall = wp_api.getPosts().id(15);
 
         postCall.enqueue(new Callback<Post>() {
             @Override
