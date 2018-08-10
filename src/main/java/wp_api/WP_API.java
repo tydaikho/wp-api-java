@@ -16,7 +16,7 @@ public class WP_API {
                 .build();
     }
 
-    public Posts getPosts() {
+    public Posts posts() {
         return new Posts(retrofit);
     }
 

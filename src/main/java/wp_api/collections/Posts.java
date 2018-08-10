@@ -1,6 +1,6 @@
 package wp_api.collections;
 
-import java.util.List;
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Retrofit;
@@ -19,7 +19,7 @@ public class Posts {
         return service.getPostByID(id);
     }
 
-    public Call<List<Post>> get() {
+    public Call<ArrayList<Post>> get() {
         return service.getPosts();
     }
 }
