@@ -2,6 +2,8 @@ package wp_api.models;
 
 import com.google.gson.annotations.SerializedName;
 
+import java.util.ArrayList;
+
 public class Post {
 
     /**
@@ -164,6 +166,29 @@ public class Post {
      */
     private Boolean sticky;
 
+    /**
+     * The theme file to use to display the object.
+     *
+     * Context: view, edit
+     *
+     * One of:
+     */
+    private String template;
+
+    /**
+     * The terms assigned to the object in the category taxonomy.
+     *
+     * Context: view, edit
+     */
+    private ArrayList<Integer> categories;
+
+    /**
+     * The terms assigned to the object in the post_tag taxonomy.
+     *
+     * Context: view, edit
+     */
+    private ArrayList<Integer> tags;
+
     public String getDate() {
         return date;
     }
@@ -322,6 +347,30 @@ public class Post {
 
     public void setSticky(Boolean sticky) {
         this.sticky = sticky;
+    }
+
+    public String getTemplate() {
+        return template;
+    }
+
+    public void setTemplate(String template) {
+        this.template = template;
+    }
+
+    public ArrayList<Integer> getCategories() {
+        return categories;
+    }
+
+    public void setCategories(ArrayList<Integer> categories) {
+        this.categories = categories;
+    }
+
+    public ArrayList<Integer> getTags() {
+        return tags;
+    }
+
+    public void setTags(ArrayList<Integer> tags) {
+        this.tags = tags;
     }
 
 }
