@@ -96,16 +96,16 @@ public class Posts {
     /**
      * Limit result set to posts assigned to specific authors.
      */
-    public Posts author(Integer id) {
-        this.arguments.put("author", id);
+    public Posts author(String IDs) {
+        this.arguments.put("author", IDs);
         return this;
     }
 
     /**
      * Ensure result set excludes posts assigned to specific authors.
      */
-    public Posts authorExclude(Integer id) {
-        this.arguments.put("author_exclude", id);
+    public Posts authorExclude(String IDs) {
+        this.arguments.put("author_exclude", IDs);
         return this;
     }
 
@@ -114,6 +114,120 @@ public class Posts {
      */
     public Posts before(String date) {
         this.arguments.put("before", date);
+        return this;
+    }
+
+    /**
+     * Ensure result set excludes specific IDs.
+     */
+    public Posts exclude(String IDs) {
+        this.arguments.put("exclude", IDs);
+        return this;
+    }
+
+    /**
+     * Limit result set to specific IDs.
+     */
+    public Posts include(String IDs) {
+        this.arguments.put("include", IDs);
+        return this;
+    }
+
+    /**
+     * Offset the result set by a specific number of items.
+     */
+    public Posts offset(Integer offset) {
+        this.arguments.put("offset", offset);
+        return this;
+    }
+
+    /**
+     * Order sort attribute ascending or descending.
+     *
+     * Default: desc
+     *
+     * One of: asc, desc
+     */
+    public Posts order(String order) {
+        this.arguments.put("order", order);
+        return this;
+    }
+
+    /**
+     * Sort collection by object attribute.
+     *
+     * Default: date
+     *
+     * One of: author, date, id, include, modified, parent, relevance, slug, title
+     */
+    public Posts orderby(String orderby) {
+        this.arguments.put("orderby", orderby);
+        return this;
+    }
+
+    /**
+     * Limit result set to posts with one or more specific slugs.
+     */
+    public Posts slug(String slug) {
+        this.arguments.put("slug", slug);
+        return this;
+    }
+
+    /**
+     * Limit result set to posts assigned one or more statuses.
+     *
+     * Default: publish
+     */
+    public Posts status(String status) {
+        this.arguments.put("status", status);
+        return this;
+    }
+
+    /**
+     * Limit result set to all items that have the specified term assigned in the categories taxonomy.
+     */
+    public Posts categories(String categories) {
+        this.arguments.put("categories", categories);
+        return this;
+    }
+
+    /**
+     * Limit result set to all items except those that have the specified term assigned in the categories taxonomy.
+     */
+    public Posts categoriesExclude(String categoriesExclude) {
+        this.arguments.put("categories_exclude", categoriesExclude);
+        return this;
+    }
+
+    /**
+     * Limit result set to all items that have the specified term assigned in the tags taxonomy.
+     */
+    public Posts tags(String tags) {
+        this.arguments.put("tags", tags);
+        return this;
+    }
+
+    /**
+     * Limit result set to all items except those that have the specified term assigned in the tags taxonomy.
+     */
+    public Posts tagsExclude(String tagsExclude) {
+        this.arguments.put("tags_exclude", tagsExclude);
+        return this;
+    }
+
+    /**
+     * Limit result set to items that are sticky.
+     */
+    public Posts sticky(Boolean sticky) {
+        this.arguments.put("sticky", sticky);
+        return this;
+    }
+
+    /**
+     * Add custom arguments
+     */
+    public Posts argument(String context, String value) {
+        this.arguments.put(context, value);
         return this;
     }
 
