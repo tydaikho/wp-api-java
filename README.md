@@ -44,15 +44,42 @@ Call<ArrayList<Post>> postListCall = wp_api.posts()
 ### Get the post with ID 15
 
 ```java
-Call<Post> postCall = wp_api.getPosts().id(15);
+Call<Post> postCall = wp_api.posts().id(15);
 ```
+
+### Get a list of pages
+
+```java
+Call<ArrayList<Page>> pageListCall = wp_api.pages()
+    .page(1)
+    .perPage(2)
+    .author("1")
+    .get();
+```
+
+###### or
+
+```java
+Call<ArrayList<Page>> pageListCall = wp_api.pages()
+    .argument("page", "1")
+    .argument("per_page", "2")
+    .argument("author", "1")
+    .get();
+```
+
+### Get the page with ID 31
+
+```java
+Call<Page> pageCall = wp_api.pages().id(31);
+```
+
 
 ## Supported REST Methods
 
 |                    | Create  | Read    | Update  | Delete  |
 |--------------------|---------|---------|---------|---------|
 | **Posts**          | ---     | yes     | ---     | ---     |
-| **Pages**          | ---     | ---     | ---     | ---     |
+| **Pages**          | ---     | yes     | ---     | ---     |
 | **Comments**       | ---     | ---     | ---     | ---     |
 | **Categories**     | ---     | ---     | ---     | ---     |
 | **Tags**           | ---     | ---     | ---     | ---     |
