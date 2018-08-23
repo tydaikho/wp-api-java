@@ -1,5 +1,6 @@
 package wp_api;
 
+import wp_api.collections.Pages;
 import wp_api.collections.Posts;
 
 import retrofit2.Retrofit;
@@ -18,6 +19,10 @@ public class WP_API {
 
     public Posts posts() {
         return new Posts(retrofit);
+    }
+
+    public Pages pages() {
+        return new Pages(retrofit);
     }
 
 }
