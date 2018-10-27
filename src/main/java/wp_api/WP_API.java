@@ -1,5 +1,6 @@
 package wp_api;
 
+import wp_api.collections.Comments;
 import wp_api.collections.Pages;
 import wp_api.collections.Posts;
 
@@ -23,6 +24,10 @@ public class WP_API {
 
     public Pages pages() {
         return new Pages(retrofit);
+    }
+
+    public Comments comments() {
+        return new Comments(retrofit);
     }
 
 }

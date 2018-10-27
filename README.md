@@ -73,6 +73,28 @@ Call<ArrayList<Page>> pageListCall = wp_api.pages()
 Call<Page> pageCall = wp_api.pages().id(31);
 ```
 
+### Get a list of comments
+```java
+Call<ArrayList<Comment>> commentListCall = wp_api.comments()
+    .post(1)
+    .perPage(2)
+    .get();
+```
+
+###### or
+
+```java
+Call<ArrayList<Comment>> commentListCall = wp_api.comments()
+    .argument("post", "1")
+    .argument("per_page", "2")
+    .get();
+```
+
+### Get the comment with ID 1
+
+```java
+Call<Comment> commentCall = wp_api.comments().id(31);
+```
 
 ## Supported REST Methods
 
@@ -80,7 +102,7 @@ Call<Page> pageCall = wp_api.pages().id(31);
 |--------------------|---------|---------|---------|---------|
 | **Posts**          | ---     | yes     | ---     | ---     |
 | **Pages**          | ---     | yes     | ---     | ---     |
-| **Comments**       | ---     | ---     | ---     | ---     |
+| **Comments**       | ---     | yes     | ---     | ---     |
 | **Categories**     | ---     | ---     | ---     | ---     |
 | **Tags**           | ---     | ---     | ---     | ---     |
 | **Users**          | ---     | ---     | ---     | ---     |
